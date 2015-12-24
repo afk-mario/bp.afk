@@ -1,0 +1,29 @@
+{
+  "name": "hsbgb",
+  "description": "Html5, Stylus, Bower & Gulp Boilerplate generator",
+  "main": "index.js",
+  "authors": [
+    "Arlefreak"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Html5",
+    "stylus",
+    "bower",
+    "gulp",
+    "boilerplate"
+  ],
+  "moduleType": [],
+  "homepage": "https://github.com/Arlefreak/hsbgb",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "html5shiv": "~3.7.3"
+  }
+}

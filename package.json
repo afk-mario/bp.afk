@@ -1,0 +1,55 @@
+{
+  "name": "hsbgb",
+  "version": "0.0.1",
+  "description": "Html5, Stylus, Bower & Gulp Boilerplate generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arlefreak/hsbgb.git"
+  },
+  "keywords": [
+    "Html5",
+    "stylus",
+    "bower",
+    "gulp",
+    "boilerplate"
+  ],
+  "author": "Arlefreak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Arlefreak/hsbgb/issues"
+  },
+  "homepage": "https://github.com/Arlefreak/hsbgb#readme",
+  "devDependencies": {
+    "body-parser": "^1.14.1",
+    "browserify": "^12.0.1",
+    "errorhandler": "^1.4.2",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.1.0",
+    "gulp-uglify": "^1.5.1",
+    "imagemin-gifsicle": "^4.2.0",
+    "imagemin-jpegtran": "^4.3.2",
+    "imagemin-pngquant": "^4.2.0",
+    "imagemin-svgo": "^4.2.0",
+    "jshint": "^2.9.1-rc2",
+    "jshint-stylish": "^2.1.0",
+    "main-bower-files": "^2.9.0",
+    "method-override": "^2.3.5",
+    "nib": "^1.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

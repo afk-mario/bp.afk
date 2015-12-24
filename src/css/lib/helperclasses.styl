@@ -1,0 +1,180 @@
+.ir
+	background-color transparent
+	border 0
+	overflow hidden
+	text-indent -9999px
+
+.irbefore
+	content ""
+	display block
+	width 0
+	height 150%
+
+.hidden
+	display none!important
+	visibility hidden
+
+.visuallyhidden
+	border 0
+	clip rect(0000)
+	height 1px
+	overflow hidden
+	position absolute
+	width 1px
+	margin -1px
+	padding 0
+
+.visuallyhidden.focusableactive
+.visuallyhidden.focusablefocus
+	clip auto
+	height auto
+	overflow visible
+	position static
+	width auto
+	margin 0
+
+.invisible
+	visibility hidden
+
+.clearfixbefore
+.clearfixafter
+	content " "
+	display table
+
+.clearfixafter
+	clear both
+
+.clearfix
+	zoom 1
+
+.flag
+	display table
+	width 100%
+
+.flag__image
+.flag__body
+	display table-cell
+	vertical-align middle
+
+.flag--top &
+	vertical-align top
+
+.flag--bottom &
+	vertical-align bottom
+
+.flag__image
+	padding-right 10px
+	img
+	display block
+	max-width none
+
+.flag--rev &
+	padding-right 0
+	padding-left 10px
+
+.flag__body
+	width 100%
+
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http//h5bp.com/ */
+
+html
+button
+input
+select
+textarea
+	color #222
+
+html
+	font-size 1em
+	line-height 1.4
+
+-moz-selection
+	background #b3d4fc
+	text-shadow none
+
+selection
+	background #b3d4fc
+	text-shadow none
+
+hr
+	display block
+	height 1px
+	border 0
+	border-top 1px solid #ccc
+	margin 1em 0
+	padding 0
+
+audio
+canvas
+img
+video
+	vertical-align middle
+
+fieldset
+	border 0
+	margin 0
+	padding 0
+
+textarea
+	resize vertical
+
+.browsehappy
+	margin 0.2em 0
+	background #ccc
+	color #000
+	padding 0.2em 0
+
+/* ==========================================================================
+	Print styles
+	========================================================================== */
+
+@media print
+	*
+		background transparent !important
+		color #000 !important
+		box-shadow none !important
+		text-shadow none !important
+
+	a
+		&:visited
+			text-decoration underline
+
+	a[href]after
+		content " (" attr(href) ")"
+
+	abbr[title]after
+		content " (" attr(title) ")"
+
+	.ir
+		a:after
+			a[href^="javascript"]after
+			a[href^="#"]after
+				content ""
+
+	pre
+	blockquote
+		border 1px solid #999
+		page-break-inside avoid
+
+	thead
+		display table-header-group
+
+	tr
+	img
+		page-break-inside avoid
+
+	img
+		max-width 100% !important
+
+	@page
+		margin 0.5cm
+
+	p
+	h2
+	h3
+		orphans 3
+		widows 3
+
+	h2
+	h3
+		page-break-after avoid
