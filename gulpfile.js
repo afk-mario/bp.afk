@@ -1,22 +1,23 @@
 "use strict";
 
-var gulp       = require('gulp');
-var bower      = require('main-bower-files');
-var gulpif     = require('gulp-if');
-var jshint     = require('gulp-jshint');
-var uglify     = require('gulp-uglify');
-var concat     = require('gulp-concat');
-var flatten    = require('gulp-flatten');
-var rename     = require('gulp-rename');
-var gulpFilter = require('gulp-filter');
-var nib        = require('nib');
-var stylus     = require('gulp-stylus');
-var connect    = require('gulp-connect');
-var imagemin   = require('gulp-imagemin');
-var pngquant   = require('imagemin-pngquant');
-var gifsicle   = require('imagemin-gifsicle');
-var jpegtran   = require('imagemin-jpegtran');
-var svgo       = require('imagemin-svgo');
+var gulp        = require('gulp');
+var runSequence = require('run-sequence');
+var bower       = require('main-bower-files');
+var gulpif      = require('gulp-if');
+var jshint      = require('gulp-jshint');
+var uglify      = require('gulp-uglify');
+var concat      = require('gulp-concat');
+var flatten     = require('gulp-flatten');
+var rename      = require('gulp-rename');
+var gulpFilter  = require('gulp-filter');
+var nib         = require('nib');
+var stylus      = require('gulp-stylus');
+var connect     = require('gulp-connect');
+var imagemin    = require('gulp-imagemin');
+var pngquant    = require('imagemin-pngquant');
+var gifsicle    = require('imagemin-gifsicle');
+var jpegtran    = require('imagemin-jpegtran');
+var svgo        = require('imagemin-svgo');
 
 var DEBUG = process.env.NODE_ENV === 'production' ? false : true;
 
@@ -63,7 +64,6 @@ gulp.task('js', function() {
         devel: DEBUG
     }))
     .pipe(jshint.reporter('jshint-stylish'))
-    // .pipe(jshint.reporter('fail'))
     .pipe(gulpif(!DEBUG,uglify()))
     .pipe(concat('script.js'))
     .pipe(gulp.dest('./public/js/'));
@@ -116,4 +116,8 @@ gulp.task('watch', ['css', 'js', 'img', 'html', 'connect'], function() {
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/img/**/*', ['img']);
     gulp.watch('src/*.html', ['html']);
+});
+
+gulp.task('default', function() {
+  runSequence('init', 'watch');
 });
