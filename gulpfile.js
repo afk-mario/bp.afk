@@ -9,14 +9,9 @@ var concat     = require('gulp-concat');
 var flatten    = require('gulp-flatten');
 var rename     = require('gulp-rename');
 var gulpFilter = require('gulp-filter');
-var stylus     = require('gulp-stylus');
 var nib        = require('nib');
+var stylus     = require('gulp-stylus');
 var connect    = require('gulp-connect');
-// var browserify = require('browserify');
-// var source     = require('vinyl-source-stream');
-// var buffer     = require('vinyl-buffer');
-// var sourcemaps = require('gulp-sourcemaps');
-// var gutil      = require('gulp-util');
 var imagemin   = require('gulp-imagemin');
 var pngquant   = require('imagemin-pngquant');
 var gifsicle   = require('imagemin-gifsicle');
@@ -25,9 +20,9 @@ var svgo       = require('imagemin-svgo');
 
 var DEBUG = process.env.NODE_ENV === 'production' ? false : true;
 
-// Define paths variables
 // grab libraries files from bower_components, minify and push in /public
 gulp.task('bower', function() {
+    // var filter = {};
     var jsFilter = gulpFilter('**/*.js', {restore: true});
     var cssFilter = gulpFilter('*.css', {restore: true});
     var fontFilter = gulpFilter(['*.eot', '*.woff', '*.svg', '*.ttf']);
@@ -68,7 +63,7 @@ gulp.task('js', function() {
         devel: DEBUG
     }))
     .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'))
+    // .pipe(jshint.reporter('fail'))
     .pipe(gulpif(!DEBUG,uglify()))
     .pipe(concat('script.js'))
     .pipe(gulp.dest('./public/js/'));
