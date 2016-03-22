@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="253.016px" height="354.866px" viewBox="0 0 253.016 354.866" enable-background="new 0 0 253.016 354.866"
-	 xml:space="preserve">
-<g>
-	<g>
-		<path fill="#1D1D1B" d="M165.156,55.755c-13.406,0-24.27,10.869-24.27,24.273c0,13.402,10.863,24.268,24.27,24.268
-			c13.408,0,24.271-10.865,24.271-24.268C189.428,66.624,178.564,55.755,165.156,55.755z"/>
-		<path fill="#1D1D1B" d="M44.094,14.269l-0.09,0.092H22.178v21.825l-0.094,0.091l0.094,0.09V225.92h211.559V14.36H44.186
-			L44.094,14.269z M202.609,45.489v127.292L75.314,45.489H202.609z M53.307,67.497l65.758,65.758H53.307V67.497z M53.307,164.384
-			h96.887l30.406,30.408H53.307V164.384z"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="212px" height="212px" viewBox="0 0 212 212" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo" sketch:type="MSLayerGroup" fill="#1D1D1B">
+            <g id="Group" sketch:type="MSShapeGroup">
+                <path d="M143.156,41.755 C129.75,41.755 118.886,52.624 118.886,66.028 C118.886,79.43 129.749,90.296 143.156,90.296 C156.564,90.296 167.427,79.431 167.427,66.028 C167.428,52.624 156.564,41.755 143.156,41.755 L143.156,41.755 Z" id="Shape"></path>
+                <path d="M22.094,0.269 L22.004,0.361 L0.178,0.361 L0.178,22.186 L0.084,22.277 L0.178,22.367 L0.178,211.92 L211.737,211.92 L211.737,0.36 L22.186,0.36 L22.094,0.269 L22.094,0.269 Z M180.609,31.489 L180.609,158.781 L53.314,31.489 L180.609,31.489 L180.609,31.489 Z M31.307,53.497 L97.065,119.255 L31.307,119.255 L31.307,53.497 L31.307,53.497 Z M31.307,150.384 L128.194,150.384 L158.6,180.792 L31.307,180.792 L31.307,150.384 L31.307,150.384 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
 </svg>

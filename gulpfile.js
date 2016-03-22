@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var gulp        = require('gulp');
 var runSequence = require('run-sequence');
@@ -24,38 +24,61 @@ var DEBUG = process.env.NODE_ENV === 'production' ? false : true;
 // grab libraries files from bower_components, minify and push in /public
 gulp.task('bower', function() {
     // var filter = {};
-    var jsFilter = gulpFilter('**/*.js', {restore: true});
-    var cssFilter = gulpFilter('*.css', {restore: true});
+    var jsFilter = gulpFilter('**/*.js', {
+        restore: true
+    });
+    var cssFilter = gulpFilter('*.css', {
+        restore: true
+    });
     var fontFilter = gulpFilter(['*.eot', '*.woff', '*.svg', '*.ttf']);
-    var dest_path =  'public/lib';
+    var destPath = 'public/lib';
 
-    return gulp.src(bower({debugging: true, includeDev: true}))
+    return gulp.src(bower({
+        debugging: true,
+        includeDev: true
+    }))
 
     // grab vendor js files from bower_components, minify and push in /public
     .pipe(jsFilter)
-    .pipe(gulp.dest(dest_path + '/js/'))
-    .pipe(gulpif(!DEBUG,uglify()))
+    .pipe(gulp.dest(destPath + '/js/'))
+    .pipe(gulpif(!DEBUG, uglify()))
     .pipe(concat('vendor.js'))
     .pipe(rename({
-        suffix: ".min"
+        suffix: '.min'
     }))
-    .pipe(gulp.dest(dest_path + '/js/'))
+    .pipe(gulp.dest(destPath + '/js/'))
     .pipe(jsFilter.restore)
 
     // grab vendor css files from bower_components, minify and push in /public
     .pipe(cssFilter)
-    .pipe(gulp.dest(dest_path + '/css'))
+    .pipe(gulp.dest(destPath + '/css'))
     // .pipe(minifycss())
     .pipe(rename({
-        suffix: ".min"
+        suffix: '.min'
     }))
-    .pipe(gulp.dest(dest_path + '/css'))
+    .pipe(gulp.dest(destPath + '/css'))
     .pipe(cssFilter.restore)
 
     // grab vendor font files from bower_components and push in /public
     .pipe(fontFilter)
     .pipe(flatten())
-    .pipe(gulp.dest(dest_path + '/fonts'));
+    .pipe(gulp.dest(destPath + '/fonts'));
+});
+
+gulp.task('browserify', function() {
+    return browserify()
+    .on('error', gutil.log)
+    .require('./src/js/app.js', {
+        entry: true,
+        extensions: ['.js', 'jsx'],
+        debug: true
+    })
+    .transform(babelify, {
+        presets: ['es2015', 'react', 'stage-2']
+    })
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('js', function() {
@@ -66,7 +89,8 @@ gulp.task('js', function() {
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(gulpif(!DEBUG,uglify()))
     .pipe(concat('script.js'))
-    .pipe(gulp.dest('./public/js/'));
+    .pipe(gulp.dest('./public/js/'))
+    .pipe(connect.reload());
 });
 
 gulp.task('css', function() {
@@ -102,6 +126,10 @@ gulp.task('files', function() {
     .pipe(gulp.dest('./public/'));
 });
 
+gulp.task('react', function() {
+    runSequence('js', 'browserify');
+});
+
 gulp.task('connect', function() {
     connect.server({
         root: 'public',
@@ -109,15 +137,16 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('init', ['css', 'bower', 'js', 'img', 'html', 'files']);
+gulp.task('init', ['css', 'bower', 'react', 'img', 'html', 'files']);
 
-gulp.task('watch', ['css', 'js', 'img', 'html', 'connect'], function() {
+gulp.task('watch', ['css', 'react', 'img', 'html', 'connect'], function() {
     gulp.watch('src/css/**/*.styl', ['css']);
-    gulp.watch('src/js/**/*.js', ['js']);
+    gulp.watch('src/js/**/*.js', ['react']);
+    gulp.watch('src/js/**/*.jsx', ['react']);
     gulp.watch('src/img/**/*', ['img']);
     gulp.watch('src/*.html', ['html']);
 });
 
 gulp.task('default', function() {
-  runSequence('init', 'watch');
+    runSequence('init', 'watch');
 });
