@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp        = require('gulp');
+var browserify  = require('browserify');
 var runSequence = require('run-sequence');
 var bower       = require('main-bower-files');
 var gulpif      = require('gulp-if');
