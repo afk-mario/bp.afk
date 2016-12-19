@@ -1,26 +1,29 @@
 'use strict';
 
-var gulp        = require('gulp');
-var browserify  = require('browserify');
-var runSequence = require('run-sequence');
-var bower       = require('main-bower-files');
-var gulpif      = require('gulp-if');
-var jshint      = require('gulp-jshint');
-var uglify      = require('gulp-uglify');
-var concat      = require('gulp-concat');
-var flatten     = require('gulp-flatten');
-var rename      = require('gulp-rename');
-var gulpFilter  = require('gulp-filter');
-var nib         = require('nib');
-var stylus      = require('gulp-stylus');
-var connect     = require('gulp-connect');
-var imagemin    = require('gulp-imagemin');
-var pngquant    = require('imagemin-pngquant');
-var gifsicle    = require('imagemin-gifsicle');
-var jpegtran    = require('imagemin-jpegtran');
-var svgo        = require('imagemin-svgo');
+const gulp        = require('gulp');
+const gutil       = require('gulp-util');
+const source       = require('vinyl-source-stream');
+const browserify  = require('browserify');
+const babelify    = require('babelify');
+const runSequence = require('run-sequence');
+const bower       = require('main-bower-files');
+const gulpif      = require('gulp-if');
+const jshint      = require('gulp-jshint');
+const uglify      = require('gulp-uglify');
+const concat      = require('gulp-concat');
+const flatten     = require('gulp-flatten');
+const rename      = require('gulp-rename');
+const gulpFilter  = require('gulp-filter');
+const nib         = require('nib');
+const stylus      = require('gulp-stylus');
+const connect     = require('gulp-connect');
+const imagemin    = require('gulp-imagemin');
+const pngquant    = require('imagemin-pngquant');
+const gifsicle    = require('imagemin-gifsicle');
+const jpegtran    = require('imagemin-jpegtran');
+const svgo        = require('imagemin-svgo');
 
-var DEBUG = process.env.NODE_ENV === 'production' ? false : true;
+const DEBUG = process.env.NODE_ENV === 'production' ? false : true;
 
 // grab libraries files from bower_components, minify and push in /public
 gulp.task('bower', function() {
