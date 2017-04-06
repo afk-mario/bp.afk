@@ -75,131 +75,33 @@ img
 .flag__body {
   width: 100%;
 }
-/* HTML5 Boilerplate v4.3.0 | MIT License | http//h5bp.com/ */
-html,
-button,
-input,
-select,
-textarea {
-  color: #222;
-}
-html {
-  font-size: 1em;
-  line-height: 1.4;
-}
--moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-audio,
-canvas,
-img,
-video {
-  vertical-align: middle;
-}
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-textarea {
-  resize: vertical;
-}
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-@media print {
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]after {
-    content: " (" attr(title) ")";
-  }
-  .ir a:after a[href^="javascript"]after,
-  .ir a:after a[href^="#"]after {
-    content: "";
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  @page {
-    margin: 0.5cm;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
 .arrow-up {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid $black;
+  border-bottom: 5px solid #000;
 }
 .arrow-down {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid $black;
+  border-top: 5px solid #000;
 }
 .arrow-right {
   width: 0;
   height: 0;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid $black;
+  border-left: 5px solid #000;
 }
 .arrow-left {
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 10px solid $black;
+  border-right: 10px solid #000;
 }
 .halfCircle-up {
   height: 20px;
@@ -207,7 +109,7 @@ textarea {
   border-radius: 40px 40px 0 0;
   -moz-border-radius: 40px 40px 0 0;
   -webkit-border-radius: 40px 40px 0 0;
-  background: $black;
+  background: #000;
 }
 .halfCircle-down {
   height: 20px;
@@ -215,7 +117,7 @@ textarea {
   border-radius: 0 0 40px 40px;
   -moz-border-radius: 0 0 40px 40px;
   -webkit-border-radius: 0 0 40px 40px;
-  background: $black;
+  background: #000;
 }
 .halfCircle-right {
   height: 40px;
@@ -223,7 +125,7 @@ textarea {
   border-radius: 0 40px 40px 0;
   -moz-border-radius: 0 40px 40px 0;
   -webkit-border-radius: 0 40px 40px 0;
-  background: $black;
+  background: #000;
 }
 .halfCircle-left {
   height: 40px;
@@ -231,7 +133,7 @@ textarea {
   border-radius: 40px 0 0 40px;
   -moz-border-radius: 40px 0 0 40px;
   -webkit-border-radius: 40px 0 0 40px;
-  background: $black;
+  background: #000;
 }
 html,
 body,
@@ -328,9 +230,41 @@ html,
 body {
   margin: 0;
   padding: 0;
-  color: #000;
-  background: #fff;
+  color: $color1;
+  background: $color2;
   font-family: 'Source Code Pro', monaco, monospace;
+}
+h1 {
+  margin: 0 auto 20px auto;
+  font-size: 2em;
+}
+h2 {
+  margin: 0 auto 20px auto;
+  font-size: 1.8em;
+}
+h3 {
+  margin: 0 auto 20px auto;
+  font-size: 1.6em;
+}
+p {
+  margin: auto;
+  font-size: 1em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+.wrapper {
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+footer {
+  text-align: center;
+  margin: 50px auto 50px auto;
+}
+footer a {
+  color: $color1;
 }
 header {
   max-width: 600px;
@@ -354,32 +288,4 @@ header img {
   max-width: 150px;
   height: auto;
   display: inline-block;
-}
-main article {
-  width: 50%;
-  margin: auto;
-  max-width: 600px;
-}
-main article h2 {
-  margin: 0 auto 20px auto;
-  font-size: 2em;
-}
-main article p {
-  max-width: 510px;
-  margin: auto;
-  font-weight: 100;
-  font-size: 0.9em;
-  letter-spacing: 0.1em;
-  line-height: 1.2em;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-}
-footer {
-  text-align: center;
-  margin: 50px auto 50px auto;
-}
-footer a {
-  color: #000;
 }
