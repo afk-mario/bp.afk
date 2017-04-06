@@ -1,4 +1,4 @@
-# Bp.afk
+# bp.afk
 
 ```
   npm install
