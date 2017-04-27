@@ -135,7 +135,7 @@ gulp.task('html', ()=> {
 
 gulp.task('files', ()=> {
     gulp.src(['./src/**.*', '!./src/**.*.html', '!./src/**.*js', '!./src/img/'])
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest(DEST_PATH));
 });
 
 gulp.task('react', ()=> {
@@ -144,7 +144,7 @@ gulp.task('react', ()=> {
 
 gulp.task('connect', ()=> {
     connect.server({
-        root: 'public',
+        root: DEST_PATH,
         livereload: true,
     });
 });
